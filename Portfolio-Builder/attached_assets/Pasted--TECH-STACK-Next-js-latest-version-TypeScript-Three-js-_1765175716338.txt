@@ -1,0 +1,319 @@
+📌 TECH STACK
+
+
+Next.js (latest version)
+
+
+TypeScript
+
+
+Three.js → for 3D elements, interactive backgrounds, shader effects
+
+
+Barba.js → for smooth page transitions
+
+
+Framer Motion → for micro-interactions & UI animations
+
+
+TailwindCSS → utility-based styling
+
+
+GSAP (optional) → for rave-style neon motion effects
+
+
+
+📌 DESIGN THEME
+Gen-Z Dark Rave Aesthetic
+
+
+black / deep purple / neon gradients
+
+
+glitch textures
+
+
+grain overlays
+
+
+dynamic rave-like lights
+
+
+glowing blur effects
+
+
+sharp typography with futuristic feel
+
+
+cursor interactions + particle effects
+
+
+immersive 3D background using Three.js
+
+
+
+📌 WEBSITE STRUCTURE
+1. Landing Page / Hero
+
+
+Animated text reveal
+
+
+Three.js rave-style animated background
+
+
+Moving neon accents
+
+
+Floating 3D object (like a rave orb or holographic cube)
+
+
+Call-to-action: “Enter Portfolio”
+
+
+Barba.js transition into main site
+
+
+
+2. About Section
+
+
+Short bio
+
+
+Gen-Z rave glitch animation for headings
+
+
+Scrolling neon timeline for:
+
+
+Skills
+
+
+Education
+
+
+Experience
+
+
+
+
+Use Framer Motion stagger animations
+
+
+
+3. Skills Section
+
+
+Animated skill cards
+
+
+Hover effects with neon outlines
+
+
+Icons (custom glow)
+
+
+Skill categories:
+
+
+Frontend (React, TS, Next.js)
+
+
+Backend
+
+
+Tools & Platforms
+
+
+
+
+
+4. Projects Section
+
+
+Each project card should have:
+
+
+Title
+
+
+Description
+
+
+Tech stack badges
+
+
+Demo & GitHub buttons
+
+
+Three.js hover effect OR cinematic video preview
+
+
+
+
+Barba.js smooth transition into individual project pages
+
+
+Optional: 3D carousel
+
+
+
+5. Experience Section
+
+
+Vertical timeline
+
+
+Neon line animation on scroll
+
+
+Cards with role, company, duration, responsibilities
+
+
+
+6. Contact Section
+
+
+Animated rave form
+
+
+Glow-on-focus inputs
+
+
+Send button with pulse animation
+
+
+Social links with neon hover effects
+
+
+
+7. Global Features
+
+
+Custom neon cursor + magnetic hover
+
+
+Smooth scroll + page transitions
+
+
+Global grain texture
+
+
+Responsive design for all breakpoints
+
+
+SEO tags + metadata
+
+
+
+📌 FUNCTIONAL REQUIREMENTS
+
+
+All animations must be optimized for performance
+
+
+Three.js components must be isolated in reusable modules
+
+
+Clean file structure:
+
+
+/components
+/sections
+/styles
+/app (Next.js app directory structure)
+/lib
+/assets
+
+
+📌 DELIVERABLES
+Generate the following clearly:
+
+
+Complete Next.js project folder structure
+
+
+Fully working code for all pages & components
+
+
+Three.js background + interactive rave element
+
+
+Barba.js integration for transitions
+
+
+Tailwind + custom CSS for neon/glitch/rave theme
+
+
+Animations implemented with Framer Motion
+
+
+Clear instructions for:
+
+
+How to run the project
+
+
+How to modify content
+
+
+
+
+
+📌 CONTENT TO INSERT ABOUT ME
+Use placeholders, but structure them properly:
+Name: Kanishka Sinha
+Role: Frontend Developer / Web Designer
+Bio: Passionate about building immersive, animated, next-gen websites.
+Skills: React, Next.js, TypeScript, Tailwind, Three.js, GSAP, Node.js, Git, etc.
+Projects: Add placeholder projects with sections ready to be edited.
+
+
+📌 STYLE REQUIREMENTS
+
+
+Zero generic template code
+
+
+Everything must be unique and custom
+
+
+Clean, readable TypeScript
+
+
+Modular components
+
+
+Avoid unnecessary libraries
+
+
+
+📌 FINAL OUTPUT FORMAT
+Return:
+
+
+The complete codebase
+
+
+All required files
+
+
+All animations included
+
+
+No explanations unless necessary
+
+
+No placeholder “lorem ipsum”—use clear structure
+
+
+
+👍 Paste this into Replit AI directly — it is clean, structured, and production-ready.
+If you want, I can also generate:
+✅ the complete full portfolio code myself
+or
+✅ UI sketches / wireframes
+or
+✅ additional prompts (for shaders, transitions, 3D objects)
+Just tell me!
