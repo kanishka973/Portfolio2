@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-builder-root",
+  "version": "1.0.0",
+  "description": "Root package.json for Portfolio Builder project",
+  "scripts": {
+    "dev": "npm --prefix Portfolio-Builder run dev",
+    "build": "npm --prefix Portfolio-Builder run build",
+    "start": "npm --prefix Portfolio-Builder start",
+    "check": "npm --prefix Portfolio-Builder run check",
+    "db:push": "npm --prefix Portfolio-Builder run db:push"
+  },
+  "private": true,
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

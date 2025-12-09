@@ -76,3 +76,5 @@ No environment variables are required for basic deployment. The project is confi
 - Check TypeScript errors: `npm run check`
 - Rebuild: `npm run build`
 
+
+
