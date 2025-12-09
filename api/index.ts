@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import express from 'express';
-import { registerRoutes } from '../server/routes';
+import { registerRoutes } from '../Portfolio-Builder/server/routes';
 import path from 'path';
 import fs from 'fs';
 
@@ -18,7 +18,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     // Serve static files in production/Vercel
     if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
-      const distPath = path.resolve(process.cwd(), 'dist', 'public');
+      const distPath = path.resolve(process.cwd(), 'Portfolio-Builder', 'dist', 'public');
       if (fs.existsSync(distPath)) {
         app.use(express.static(distPath));
         // Fall through to index.html for SPA routing

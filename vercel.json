@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/public",
-  "installCommand": "npm install",
+  "buildCommand": "cd Portfolio-Builder && npm run build",
+  "outputDirectory": "Portfolio-Builder/dist/public",
+  "installCommand": "cd Portfolio-Builder && npm install",
   "builds": [
     {
       "src": "api/index.ts",
