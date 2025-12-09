@@ -84,15 +84,34 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
+  const basePort = parseInt(process.env.PORT || "5000", 10);
+  const maxAttempts = 5;
+
+  const startListening = (attempt = 0) => {
+    const port = basePort + attempt;
+
+    // Windows PowerShell can throw ENOTSUP for reusePort; only enable it where supported
+    const listenOptions: any = {
       port,
       host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
+    };
+    if (process.platform !== "win32") {
+      listenOptions.reusePort = true;
+    }
+
+    httpServer.listen(listenOptions, () => {
       log(`serving on port ${port}`);
-    },
-  );
+    });
+
+    httpServer.on("error", (err: any) => {
+      if (err.code === "EADDRINUSE" && attempt < maxAttempts) {
+        log(`port ${port} in use, trying ${port + 1}`);
+        httpServer.close(() => startListening(attempt + 1));
+      } else {
+        throw err;
+      }
+    });
+  };
+
+  startListening();
 })();
