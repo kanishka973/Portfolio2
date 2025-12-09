@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Build Check
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -30,12 +30,12 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
-          vercel-args: '--prod'
+      - name: Verify build output
+        run: |
+          if [ ! -d "Portfolio-Builder/dist/public" ]; then
+            echo "❌ Build output directory not found!"
+            exit 1
+          fi
+          echo "✅ Build successful! Output directory exists."
+          ls -la Portfolio-Builder/dist/public
 
