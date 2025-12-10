@@ -1,11 +1,19 @@
-name: Build Check
+name: Deploy to Vercel
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,24 +23,77 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: Portfolio-Builder/package-lock.json
+          cache-dependency-path: |
+            package.json
+            Portfolio-Builder/package.json
 
-      - name: Install dependencies
-        working-directory: ./Portfolio-Builder
-        run: npm ci
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install Portfolio-Builder dependencies
+        working-directory: Portfolio-Builder
+        run: npm install
+
+      - name: Run TypeScript check
+        working-directory: Portfolio-Builder
+        run: npm run check
 
       - name: Build project
-        working-directory: ./Portfolio-Builder
+        working-directory: Portfolio-Builder
         run: npm run build
-        env:
-          NODE_ENV: production
 
       - name: Verify build output
         run: |
           if [ ! -d "Portfolio-Builder/dist/public" ]; then
-            echo "❌ Build output directory not found!"
+            echo "Build output directory not found!"
             exit 1
           fi
-          echo "✅ Build successful! Output directory exists."
-          ls -la Portfolio-Builder/dist/public
+          if [ ! -f "Portfolio-Builder/dist/public/index.html" ]; then
+            echo "index.html not found in build output!"
+            exit 1
+          fi
+          echo "Build verification successful!"
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel Environment Information
+        id: vercel-pull
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
+
+      - name: Build Project Artifacts
+        working-directory: Portfolio-Builder
+        run: npm run build
+
+      - name: Deploy Project to Vercel
+        id: vercel-deploy
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: ./
+
+      - name: Output deployment URL
+        run: |
+          echo "Deployment URL: ${{ steps.vercel-deploy.outputs.preview-url }}"

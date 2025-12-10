@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            package.json
+            Portfolio-Builder/package.json
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install Portfolio-Builder dependencies
+        working-directory: Portfolio-Builder
+        run: npm install
+
+      - name: Run TypeScript check
+        working-directory: Portfolio-Builder
+        run: npm run check
+
+      - name: Build project
+        working-directory: Portfolio-Builder
+        run: npm run build
+
+      - name: Verify build artifacts
+        run: |
+          if [ ! -d "Portfolio-Builder/dist/public" ]; then
+            echo "❌ Build output directory not found!"
+            exit 1
+          fi
+          if [ ! -f "Portfolio-Builder/dist/public/index.html" ]; then
+            echo "❌ index.html not found in build output!"
+            exit 1
+          fi
+          echo "✅ Build verification successful!"
+
