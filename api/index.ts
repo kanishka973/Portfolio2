@@ -40,8 +40,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).end();
     }
 
-    const path = req.url || req.query.path || '';
-    const cleanPath = path.replace(/^\/api\//, '');
+    const path = Array.isArray(req.url) ? req.url[0] : (req.url || '');
+    const cleanPath = typeof path === 'string' ? path.replace(/^\/api\//, '') : '';
     
     // Health check endpoint
     if ((cleanPath === 'health' || path === '/api/health') && req.method === 'GET') {
@@ -52,7 +52,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Contact API endpoints
-    if (cleanPath === 'contact' || path.startsWith('/api/contact')) {
+    if (cleanPath === 'contact' || (typeof path === 'string' && path.startsWith('/api/contact'))) {
       if (req.method === 'POST') {
         const validation = validateContact(req.body);
         
