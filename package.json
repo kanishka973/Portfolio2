@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Root package.json for Portfolio Builder project",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "npm --prefix Portfolio-Builder run dev",
