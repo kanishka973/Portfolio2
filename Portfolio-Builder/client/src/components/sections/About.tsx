@@ -27,19 +27,14 @@ const highlights = [
 
 const timeline = [
   {
-    year: "2024",
-    title: "Frontend Developer",
-    description: "Building modern web applications with React and TypeScript",
-  },
-  {
     year: "2023",
-    title: "Web Designer",
-    description: "Creating immersive digital experiences",
+    title: "Intermediate",
+    description: "Sri Arvind Mahila College, Patna - 72.2%",
   },
   {
-    year: "2022",
-    title: "Started Learning",
-    description: "Began journey into web development",
+    year: "2021",
+    title: "Matriculation",
+    description: "Bambik Memorial High School, Bikta - 65.8%",
   },
 ];
 
@@ -84,19 +79,19 @@ export function About() {
               <div className="absolute -inset-4 bg-gradient-to-r from-neon-cyan/20 via-neon-magenta/20 to-neon-purple/20 rounded-2xl blur-xl opacity-50" />
               <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 md:p-8" data-testid="card-about-bio">
                 <p className="text-lg leading-relaxed text-foreground/90 mb-4" data-testid="text-about-intro">
-                  Hey there! I'm <span className="text-neon-cyan font-semibold">Kanishka Sinha</span>, 
-                  a frontend developer and web designer with a passion for creating 
-                  <span className="text-neon-magenta font-semibold"> immersive digital experiences</span>.
+                  Hello! I'm <span className="text-neon-cyan font-semibold">Kanishka Sinha</span>, 
+                  a passionate learner and aspiring developer with a strong foundation in 
+                  <span className="text-neon-magenta font-semibold"> web technologies</span>.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4" data-testid="text-about-description">
-                  I specialize in building modern, animated, and performant websites 
-                  using cutting-edge technologies. My goal is to push the boundaries 
-                  of what's possible on the web.
+                  To work in an environment which encourages me to succeed and grow professionally 
+                  where I can utilize my skills and knowledge appropriately. I am dedicated to 
+                  continuous learning and bringing innovative solutions to every project.
                 </p>
                 <p className="text-muted-foreground leading-relaxed" data-testid="text-about-interests">
-                  When I'm not coding, you'll find me exploring new design trends, 
-                  experimenting with 3D graphics, or diving deep into the latest 
-                  web technologies.
+                  I have completed training in HTML, JavaScript, and LibreOffice, and have 
+                  participated in workshops on Artificial Intelligence. I'm always eager to 
+                  explore new technologies and expand my skill set.
                 </p>
               </div>
             </div>
@@ -129,7 +124,7 @@ export function About() {
 
             <div className="space-y-8">
               <h3 className="font-display text-2xl font-bold ml-8 text-neon-cyan" data-testid="text-journey-title">
-                Journey
+                Education
               </h3>
               {timeline.map((item, index) => (
                 <motion.div

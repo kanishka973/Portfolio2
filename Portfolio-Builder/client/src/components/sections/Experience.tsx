@@ -5,47 +5,62 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const experiences = [
   {
     id: 1,
-    role: "Senior Frontend Developer",
-    company: "Tech Innovators Inc.",
-    location: "Remote",
-    duration: "2023 - Present",
+    role: "Certificate of Participation",
+    company: "Artificial Intelligence Workshop",
+    location: "Workshop",
+    duration: "2023",
     description:
-      "Leading frontend development for enterprise-level web applications. Implementing modern UI/UX patterns and mentoring junior developers.",
+      "Participated in a comprehensive workshop on Artificial Intelligence, gaining insights into AI fundamentals and applications.",
     responsibilities: [
-      "Architecting scalable React applications",
-      "Implementing Three.js 3D visualizations",
-      "Performance optimization and code reviews",
-      "Mentoring team members",
+      "Learned AI fundamentals and concepts",
+      "Explored practical AI applications",
+      "Networked with industry professionals",
+      "Completed workshop requirements",
     ],
   },
   {
     id: 2,
-    role: "Frontend Developer",
-    company: "Digital Agency Co.",
-    location: "Bangalore, India",
-    duration: "2022 - 2023",
+    role: "Certificate of Completion",
+    company: "HTML & JavaScript Training",
+    location: "Training Program",
+    duration: "2023",
     description:
-      "Developed interactive websites and web applications for various clients. Focused on creating engaging user experiences with smooth animations.",
+      "Successfully completed comprehensive training programs in HTML and JavaScript, building a strong foundation in web development technologies.",
     responsibilities: [
-      "Building responsive web applications",
-      "Creating animation-rich interfaces",
-      "Client collaboration and requirements gathering",
-      "Cross-browser compatibility testing",
+      "Mastered HTML fundamentals and best practices",
+      "Learned JavaScript programming concepts",
+      "Built practical web development projects",
+      "Completed all training modules",
     ],
   },
   {
     id: 3,
-    role: "Junior Web Developer",
-    company: "StartUp Labs",
-    location: "Mumbai, India",
-    duration: "2021 - 2022",
+    role: "Certificate of Completion",
+    company: "LibreOffice Training",
+    location: "Training Program",
+    duration: "2023",
     description:
-      "Started my professional journey building websites and learning modern web technologies. Gained hands-on experience with React and JavaScript.",
+      "Completed training in LibreOffice suite, gaining proficiency in office productivity tools and document management.",
     responsibilities: [
-      "Developing landing pages and portfolios",
-      "Learning React and TypeScript",
-      "Collaborating with design team",
-      "Bug fixing and maintenance",
+      "Learned LibreOffice applications",
+      "Mastered document creation and formatting",
+      "Completed practical assignments",
+      "Achieved training certification",
+    ],
+  },
+  {
+    id: 4,
+    role: "Certificate of Participation",
+    company: "Marwari Health Society",
+    location: "Community Event",
+    duration: "2023",
+    description:
+      "Participated in community health initiatives organized by Marwari Health Society, contributing to social welfare activities.",
+    responsibilities: [
+      "Participated in health awareness programs",
+      "Contributed to community initiatives",
+      "Collaborated with team members",
+      "Completed participation requirements",
     ],
   },
 ];
@@ -82,7 +97,7 @@ export function Experience() {
             <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-experience-subtitle">
-            My professional journey in web development
+            My achievements, certifications, and learning journey
           </p>
         </motion.div>
 

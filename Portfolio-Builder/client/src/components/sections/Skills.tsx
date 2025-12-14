@@ -17,34 +17,33 @@ import {
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Technical Skills",
     color: "cyan",
     skills: [
-      { name: "React", icon: SiReact, level: 95 },
-      { name: "Next.js", icon: SiNextdotjs, level: 90 },
-      { name: "TypeScript", icon: SiTypescript, level: 88 },
-      { name: "JavaScript", icon: SiJavascript, level: 95 },
-      { name: "Tailwind CSS", icon: SiTailwindcss, level: 92 },
+      { name: "HTML", icon: null, level: 85 },
+      { name: "JavaScript", icon: SiJavascript, level: 80 },
+      { name: "LibreOffice", icon: null, level: 75 },
     ],
   },
   {
-    title: "Animation & 3D",
+    title: "Soft Skills",
     color: "magenta",
     skills: [
-      { name: "Three.js", icon: SiThreedotjs, level: 85 },
-      { name: "Framer Motion", icon: SiFramer, level: 90 },
-      { name: "GSAP", icon: null, level: 88 },
+      { name: "Communication", icon: null, level: 90 },
+      { name: "Leadership & Teamwork", icon: null, level: 85 },
+      { name: "Adaptability & Innovation", icon: null, level: 88 },
+      { name: "Self-Motivation", icon: null, level: 90 },
+      { name: "Analytical Thinking", icon: null, level: 85 },
     ],
   },
   {
-    title: "Tools & Platforms",
+    title: "Certifications",
     color: "purple",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, level: 85 },
-      { name: "Git", icon: SiGit, level: 90 },
-      { name: "Figma", icon: SiFigma, level: 80 },
-      { name: "Vercel", icon: SiVercel, level: 88 },
-      { name: "Vite", icon: SiVite, level: 92 },
+      { name: "AI Workshop", icon: null, level: 100 },
+      { name: "HTML Training", icon: null, level: 100 },
+      { name: "JavaScript Training", icon: null, level: 100 },
+      { name: "LibreOffice Training", icon: null, level: 100 },
     ],
   },
 ];

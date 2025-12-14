@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, Loader2, CheckCircle } from "lucide-react";
+import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, Loader2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -130,7 +130,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium" data-testid="text-email-value">hello@kanishka.dev</p>
+                  <a href="mailto:sinhakanishka706@gmail.com" className="font-medium hover:text-neon-cyan transition-colors" data-testid="text-email-value">sinhakanishka706@gmail.com</a>
                 </div>
               </motion.div>
 
@@ -139,14 +139,29 @@ export function Contact() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.5 }}
                 className="flex items-center gap-4 group"
-                data-testid="contact-info-location"
+                data-testid="contact-info-phone"
               >
                 <div className="w-12 h-12 rounded-lg bg-neon-magenta/10 border border-neon-magenta/30 flex items-center justify-center group-hover:border-neon-magenta/60 transition-colors">
-                  <MapPin className="w-5 h-5 text-neon-magenta" />
+                  <Phone className="w-5 h-5 text-neon-magenta" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a href="tel:+917301576742" className="font-medium hover:text-neon-magenta transition-colors" data-testid="text-phone-value">+91 7301576742</a>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.6 }}
+                className="flex items-center gap-4 group"
+                data-testid="contact-info-location"
+              >
+                <div className="w-12 h-12 rounded-lg bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center group-hover:border-neon-purple/60 transition-colors">
+                  <MapPin className="w-5 h-5 text-neon-purple" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium" data-testid="text-location-value">India</p>
+                  <p className="font-medium" data-testid="text-location-value">Patna, Bihar, India</p>
                 </div>
               </motion.div>
             </div>
