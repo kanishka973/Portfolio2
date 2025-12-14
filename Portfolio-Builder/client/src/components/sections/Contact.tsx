@@ -21,7 +21,7 @@ import {
 
 const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com", color: "hover:text-foreground" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "hover:text-neon-blue" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/kanishka-sinha-0b204a375/", color: "hover:text-neon-blue" },
   { name: "Twitter", icon: Twitter, href: "https://twitter.com", color: "hover:text-neon-cyan" },
 ];
 
